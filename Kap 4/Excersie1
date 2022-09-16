@@ -1,0 +1,17 @@
+// =
+console.log(2 == 2); 
+// Der kommer til at stå 2
+console.log(2 == '2'); 
+// Der Kommer ikke til at stå noget da den er false (Det giver ikke den samme værdi)
+console.log(3 != 2); 
+// Der kommer til at stå nader (Fals)
+console.log('hello' != 'Hello'); 
+// Den er true
+console.log(2 === 2); 
+//der Kommer til at stå 2
+console.log(2 === '2'); 
+// igen der kommer ikke til at stå 2 (Anden værdi)
+console.log(2 !== '2'); 
+// True
+console.log(2 !== 2);
+//I Guess true
