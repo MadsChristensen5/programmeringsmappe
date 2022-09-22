@@ -146,7 +146,7 @@ function setup() {
      background(204); 
      stroke(102); 
      line(40, 0, 70, height); 
-     if (mouseIsPressed) { //hvor kommer denne variable fra?
+     if (mouseIsPressed) { 
         //MouseIsPressed Er at du siger til koden at hvis denne mussetast
         //er nede gør den følgende komando
       if (mouseButton == LEFT) {  // og hvad med den?
@@ -235,6 +235,7 @@ function draw() {
 */
 
 //Øvelse 10
+/*
 let x = 100;
 let y = 100;
 let img;
@@ -264,4 +265,86 @@ function draw() {
 
   clear();
   image(img,x,y);
+}
+*/
+
+//Katten efter musen
+
+let x = 250;
+let y = 250;
+let xKat = 150;
+let ykat = 200;
+let b = 1;
+let d =20;
+let KatXspeed = 5;
+let KatYspeed = 5;
+let scorepoint = 0;
+
+
+function setup(){
+    createCanvas(500,500);
+    background(255)
+    img = loadImage("cursed-mouse.jpg")
+   jason = loadImage("Dvd.jpg")
+
+
+}
+
+function draw(){
+
+    background(255);
+    image(img, x,y,50, 50);
+    image(jason,xKat,ykat,50,50)
+
+    if
+    (keyIsDown(LEFT_ARROW)){
+    x -= 5;
+  }
+  if
+   (keyIsDown(RIGHT_ARROW)){
+    x += 5;
+   }
+    if
+      (keyIsDown(UP_ARROW)){
+        y -= 5;
+      }
+    if
+      (keyIsDown(DOWN_ARROW)){
+        y += 5;
+      }
+      
+    xKat+=KatXspeed
+    ykat += KatYspeed
+
+    
+
+    if (ykat > 440){
+        KatYspeed = random(-5,-2)
+        scorepoint += 10
+    }
+    
+    if (ykat < 40){
+        KatYspeed = random(5,2)
+        scorepoint += 10
+    }
+    if (xKat < 40){
+        KatXspeed = random(5,2)
+        scorepoint += 10
+    }
+    if (xKat > 440){
+        KatXspeed = random(-5,-2)   
+        scorepoint += 10
+    }
+
+    mat = Math.sqrt(((xKat-x)*(xKat-x))+((ykat-y)*(ykat-y)))
+    if (mat < 100){
+        background(255,0,0)
+        scorepoint = 0
+  
+      }
+
+    
+
+      text(scorepoint,250,100)
+
 }
